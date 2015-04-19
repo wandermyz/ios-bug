@@ -1,5 +1,3 @@
-// XCode 6.2
-
 import Foundation
 
 println("Test")
@@ -19,3 +17,7 @@ TestFetchAndStoreOperation<AnyObject>()
 let countriesFetchOperation = ClosureFetchAndStoreOperation<NSNumber> { () in NSNumber(integer: 10) }
 
 countriesFetchOperation.main()
+
+// XCode 6.2
+// Expected: Run without errors
+// Actual: Mysterious EXEC error
