@@ -12,7 +12,7 @@ class TestFetchAndStoreOperation<T>: FetchAndStoreOperation<NSArray /*Changing t
   }
 }
 
-TestFetchAndStoreOperation<AnyObject>()
+TestFetchAndStoreOperation<AnyObject>() // Removing this will fix
 
 let countriesFetchOperation = ClosureFetchAndStoreOperation<NSNumber> { () in NSNumber(integer: 10) } // Subclassing FetchAndStoreOperation directly will fix
 
