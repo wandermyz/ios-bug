@@ -1,7 +1,4 @@
 import Foundation
 
-class ConcurrentOperation: NSOperation {
-  override func main() {
-    fatalError("Subclass must override this function")
-  }
+class ConcurrentOperation: NSOperation /* Changing this to NSObject will fix*/ {
 }
