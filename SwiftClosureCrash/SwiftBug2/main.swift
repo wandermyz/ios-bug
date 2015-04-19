@@ -1,3 +1,5 @@
+// XCode 6.2
+
 import Foundation
 
 println("Test")
