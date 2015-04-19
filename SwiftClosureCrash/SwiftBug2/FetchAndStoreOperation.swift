@@ -1,7 +1,7 @@
 import Foundation
 
-class FetchAndStoreOperation<DataType:AnyObject>: ConcurrentOperation {
-  private var fulfiller: (DataType -> Void)?
+class FetchAndStoreOperation<DataType:AnyObject>: ConcurrentOperation /* Changing this to NSOperation will fix */ {
+  private var fulfiller: (DataType -> Void)? // Removing this will fix
 
   override init() {
     super.init()
@@ -12,6 +12,6 @@ class FetchAndStoreOperation<DataType:AnyObject>: ConcurrentOperation {
   }
 
   final override func main() {
-    fetchData()
+    fetchData() // Avoiding call this will fix
   }
 }

@@ -2,7 +2,7 @@ import Foundation
 
 println("Test")
 
-class TestFetchAndStoreOperation<T>: FetchAndStoreOperation<NSArray> {
+class TestFetchAndStoreOperation<T>: FetchAndStoreOperation<NSArray /*Changing this to NSNumber will fix*/> {
   override init() {
     super.init()
   }
@@ -14,10 +14,11 @@ class TestFetchAndStoreOperation<T>: FetchAndStoreOperation<NSArray> {
 
 TestFetchAndStoreOperation<AnyObject>()
 
-let countriesFetchOperation = ClosureFetchAndStoreOperation<NSNumber> { () in NSNumber(integer: 10) }
+let countriesFetchOperation = ClosureFetchAndStoreOperation<NSNumber> { () in NSNumber(integer: 10) } // Subclassing FetchAndStoreOperation directly will fix
 
 countriesFetchOperation.main()
 
 // XCode 6.2
 // Expected: Run without errors
 // Actual: Mysterious EXEC error
+// Run on swift commandline won't reproduce the issue
